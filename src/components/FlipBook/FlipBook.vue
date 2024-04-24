@@ -172,6 +172,8 @@ function loadImage(url) {
  */
 function flipTo(options) {
 
+    console.log('flipTo options', options);
+
     // 如果正在翻页，直接返回
     if (isFlipping) {
         return;
@@ -534,8 +536,8 @@ function lastClick() {
     flipTo({
         containerDom: flipBook.value,
         doms: itemDoms,
-        cIndex: props.selectedIndex,
-        index: props.selectedIndex - 1,
+        cIndex: selectedIndex,
+        index: selectedIndex - 1,
         direction: 'left',
         isTouchflip: true
     });
@@ -545,8 +547,8 @@ function nextClick() {
     flipTo({
         containerDom: flipBook.value,
         doms: itemDoms,
-        cIndex: props.selectedIndex,
-        index: props.selectedIndex + 1,
+        cIndex: selectedIndex,
+        index: selectedIndex + 1,
         direction: 'right',
         isTouchflip: true
     });
